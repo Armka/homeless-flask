@@ -25,10 +25,10 @@ def fb():
 
 	return render_template('fb_test.html', id=user_id, name=user_name)
 
+
 #----------------------------------------
 # facebook authentication
-#----------------------------------------
-
+#-------------------
 
 
 FACEBOOK_APP_ID = '1626770800876369'
@@ -75,5 +75,24 @@ def facebook_authorized(resp):
 def logout():
     pop_login_session()
     return redirect(url_for('home'))
+
+# --------------------
+# Personality IBM 
+#--------------------
+
+
+PERSONALITY_USERNAME = '80662f4f-763a-488a-9735-6a82f906fe6f'
+PERSONALITY_PASSWORD = 'Ren5g0rlLWEv'
+
+#URL: https://gateway.watsonplatform.net/personality
+
+@app.route('/personality')
+def personality():
+    return render_template('personality.html')
+
+@app.route('/speech')
+def speech():
+    return render_template('speech.html')
+    
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=80, debug=True)
