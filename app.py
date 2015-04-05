@@ -86,13 +86,17 @@ PERSONALITY_PASSWORD = 'Ren5g0rlLWEv'
 
 #URL: https://gateway.watsonplatform.net/personality
 
-@app.route('/personality')
+@app.route('/personality', methods=['GET', 'POST'])
 def personality():
-    return render_template('personality.html')
+    if request.method == 'POST': 
+        // Do Stuff 
+
+    else: 
+        return render_template('bio.html')
 
 @app.route('/speech')
 def speech():
     return render_template('speech.html')
-    
+
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=80, debug=True)
