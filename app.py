@@ -89,7 +89,9 @@ PERSONALITY_PASSWORD = 'Ren5g0rlLWEv'
 @app.route('/personality', methods=['GET', 'POST'])
 def personality():
     if request.method == 'POST': 
-        return None
+        bio = request.form['bio'] 
+        
+        return render_template('bio_full.html', bio=bio)
 
     else: 
         return render_template('bio.html')
