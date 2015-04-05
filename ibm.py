@@ -1,7 +1,7 @@
 import requests
 import json
 
-url="http://personality-armka.mybluemix.net/api"
+url="http://personality-armka.mybluemix.net/v2/profile"
 username="d2941e53-6616-4f35-8ed9-c16475f8a171"
 password="OwsBVns1mGJP"
 input_data = {
